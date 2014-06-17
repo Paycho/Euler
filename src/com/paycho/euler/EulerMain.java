@@ -1,5 +1,6 @@
 package com.paycho.euler;
 
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableSet;
 import com.paycho.euler.problems.Problem;
 import com.paycho.euler.problems.Problem1;
@@ -18,7 +19,12 @@ public class EulerMain {
 
   public static void main(String[] args) {
     problems.stream().forEach((problem) -> {
-      System.out.println(problem.getClass().getSimpleName() + " : " + problem.solve());
+      StringBuilder builder = new StringBuilder();
+      builder.append(problem.getClass().getSimpleName()).append(" : ");
+      Stopwatch watch = Stopwatch.createStarted();
+      builder.append(problem.solve());
+      builder.append(" , in ").append(watch.stop());
+      System.out.println(builder.toString());
     });
   }
     
