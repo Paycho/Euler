@@ -1,6 +1,7 @@
 
 package com.paycho.euler.problems;
 
+import com.google.inject.Inject;
 import com.paycho.euler.math.series.FibonacciSummer;
 
 /**
@@ -11,9 +12,16 @@ public class Problem2 implements Problem<Integer> {
   
   public static final Integer MAXIMUM_FIBONACCI_NUMBER = 4000000;
   
+  private final FibonacciSummer summer;
+  
+  @Inject
+  public Problem2(FibonacciSummer summer) {
+    this.summer = summer;
+  }
+  
   @Override
   public Integer solve() {
-    FibonacciSummer summer = new FibonacciSummer(MAXIMUM_FIBONACCI_NUMBER);
+    summer.setMaximumNumber(MAXIMUM_FIBONACCI_NUMBER);
     return summer.findSum();
   }
 }

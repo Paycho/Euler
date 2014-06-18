@@ -16,7 +16,7 @@ public class PalindromeFinderTest {
   
   @Test
   public void testPalindrome() throws Exception {
-    PalindromeFinder finder = new PalindromeFinder(2);
-    assertEquals((Integer) 9009, finder.findBiggestPalindrome());
+    PalindromeFinder finder = new PalindromeFinder();
+    assertEquals((Integer) 9009, finder.findBiggestPalindrome(2));
   }
 }

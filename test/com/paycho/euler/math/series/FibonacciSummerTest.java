@@ -16,7 +16,8 @@ public class FibonacciSummerTest {
   
   @Test
   public void testFibonacciSum() throws Exception {
-    FibonacciSummer summer = new FibonacciSummer(10);
+    FibonacciSummer summer = new FibonacciSummer();
+    summer.setMaximumNumber(10);
     assertEquals((Integer) 10, summer.findSum());
   }
 }

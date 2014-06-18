@@ -2,6 +2,7 @@
 package com.paycho.euler.math.primes;
 
 import com.google.common.collect.Sets;
+import com.google.inject.Inject;
 import java.util.Set;
 
 /**
@@ -13,17 +14,16 @@ public class BiggestPrimeFinder {
   private final Set<Long> seen = Sets.newHashSet();
   private final Set<Long> newPrimes = Sets.newHashSet();
   
-  private Long largestPrime = 2L;
+  private Long largestPrime;
   
-  private final Long inputNumber;
+  private Long inputNumber;
   
-  public BiggestPrimeFinder(Long inputNumber) {
-    this.inputNumber = inputNumber;
-    knownPrimes.add(largestPrime);
-    seen.add(largestPrime);
+  @Inject
+  public BiggestPrimeFinder() {
   }
   
   public Long getBiggestPrimeFactor() {
+    largestPrime = 2L;
     discoverPrimes(inputNumber);
     return largestPrime;
   }
@@ -46,5 +46,9 @@ public class BiggestPrimeFinder {
       }
     }
     addPrime(remainder);
+  }
+
+  public void setNumberToFactor(Long inputNumber) {
+    this.inputNumber = inputNumber;
   }
 }

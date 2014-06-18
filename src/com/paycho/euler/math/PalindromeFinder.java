@@ -1,24 +1,28 @@
 
 package com.paycho.euler.math;
 
+import com.google.inject.Inject;
+
 /**
  *
  * @author Paycho <paycho@paycho.org>
  */
 public class PalindromeFinder {
-  private final Integer digits;
+  private Integer digits;
   
   private Integer maximum = 1;
   private Integer minimum = 1;
   
-  public PalindromeFinder(Integer digits) {
-    this.digits = digits;
-    calculateBounds();
+  @Inject
+  public PalindromeFinder() {
   }
   
   
   
-  public Integer findBiggestPalindrome() {
+  public Integer findBiggestPalindrome(Integer digits) {
+    this.digits = digits;
+    calculateBounds();
+    
     for (int i = maximum; i > minimum; i--) {
       for (int j = maximum; j > minimum; j--) {
         Integer possiblePalindrome = i*j;
@@ -41,6 +45,9 @@ public class PalindromeFinder {
   }
   
   private void calculateBounds() {
+    maximum = 1;
+    minimum = 1;
+    
     for (int i = 1; i < digits; i++) {
       maximum *= 10;
       minimum *= 10;

@@ -10,11 +10,7 @@ import java.util.Set;
  */
 public class MultipleSummer {
   
-  private final Integer sumUnder;
-  
-  public MultipleSummer(Integer sumUnder) {
-    this.sumUnder = sumUnder;
-  }
+  private Integer sumUnder;
   
   public Integer getSum(Set<Integer> factors) {
     Set<Integer> multiples = Sets.newHashSet();
@@ -31,5 +27,9 @@ public class MultipleSummer {
       sum += multiple;
     }
     return sum;
+  }
+
+  public void setMultipleNumber(Integer sumUnder) {
+    this.sumUnder = sumUnder;
   }
 }

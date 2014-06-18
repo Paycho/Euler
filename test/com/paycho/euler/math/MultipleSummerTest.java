@@ -15,7 +15,8 @@ public class MultipleSummerTest {
   
   @Test
   public void verifySum() throws Exception {
-    MultipleSummer summer = new MultipleSummer(10);
+    MultipleSummer summer = new MultipleSummer();
+    summer.setMultipleNumber(10);
     assertEquals((Integer) 23, summer.getSum(ImmutableSet.<Integer>of(3, 5)));
   }
 }

@@ -16,16 +16,17 @@ public class BiggestPrimeFinderTest {
   
   @Test
   public void testPrimeFinding() {
-    BiggestPrimeFinder finder = new BiggestPrimeFinder(20L);
-    assertEquals((Integer) 5, finder.getBiggestPrimeFactor());
-    finder = new BiggestPrimeFinder(24L);
-    assertEquals((Integer) 3, finder.getBiggestPrimeFactor());
-    finder = new BiggestPrimeFinder(1000L);
-    assertEquals((Integer) 5, finder.getBiggestPrimeFactor());
-    finder = new BiggestPrimeFinder(1003L);
-    assertEquals((Integer) 59, finder.getBiggestPrimeFactor());
-    finder = new BiggestPrimeFinder(92487024L);
-    assertEquals((Integer) 91753, finder.getBiggestPrimeFactor());
+    BiggestPrimeFinder finder = new BiggestPrimeFinder();
+    finder.setNumberToFactor(20L);
+    assertEquals((Long) 5L, finder.getBiggestPrimeFactor());
+    finder.setNumberToFactor(24L);
+    assertEquals((Long) 3L, finder.getBiggestPrimeFactor());
+    finder.setNumberToFactor(1000L);
+    assertEquals((Long) 5L, finder.getBiggestPrimeFactor());
+    finder.setNumberToFactor(1003L);
+    assertEquals((Long) 59L, finder.getBiggestPrimeFactor());
+    finder.setNumberToFactor(92487024L);
+    assertEquals((Long) 91753L, finder.getBiggestPrimeFactor());
   }
   
 }

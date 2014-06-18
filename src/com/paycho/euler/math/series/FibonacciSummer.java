@@ -2,6 +2,7 @@
 package com.paycho.euler.math.series;
 
 import com.google.common.collect.Lists;
+import com.google.inject.Inject;
 import java.util.List;
 
 /**
@@ -11,10 +12,10 @@ import java.util.List;
 public class FibonacciSummer {
   private final List<Integer> fibonacciNumbers = Lists.newArrayList();
   
-  private final Integer maximumFibonacci;
+  private Integer maximumFibonacci;
   
-  public FibonacciSummer(Integer maximumFibonacci) {
-    this.maximumFibonacci = maximumFibonacci;
+  @Inject
+  public FibonacciSummer() {
     fibonacciNumbers.add(1);
     fibonacciNumbers.add(2);
   }
@@ -30,6 +31,10 @@ public class FibonacciSummer {
     }
     
     return sum;
+  }
+
+  public void setMaximumNumber(Integer maximumFibonacci) {
+    this.maximumFibonacci = maximumFibonacci;
   }
   
 }
