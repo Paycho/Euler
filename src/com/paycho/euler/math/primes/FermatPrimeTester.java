@@ -2,6 +2,7 @@
 package com.paycho.euler.math.primes;
 
 import com.google.inject.Inject;
+import java.math.BigInteger;
 import java.util.Random;
 
 /**
@@ -16,14 +17,25 @@ public class FermatPrimeTester {
     this.random = random;
   }
   
-  public boolean isNonPrime(Integer testNumber) {
-    Integer magnitude = ((Double) Math.log10(testNumber)).intValue();
+  public boolean isNonPrime(Long testNumber) {
+    Integer magnitude = ((Double) Math.log10(testNumber)).intValue() + 1;
+    BigInteger bigTestNumber = BigInteger.valueOf(testNumber);
     for (int i = 0; i < magnitude; i++) {
-      if (((Double) Math.pow(random.nextInt(testNumber), testNumber-1)).intValue() %
-          testNumber != 1) {
+      BigInteger base = getFermatBase(bigTestNumber);
+      if (!base.modPow(
+          bigTestNumber.subtract(BigInteger.ONE), bigTestNumber).equals(BigInteger.ONE)) {
         return true;
       }
     }
     return false;
+  }
+  
+  private BigInteger getFermatBase(BigInteger n) {
+    while(true) {
+      final BigInteger base = new BigInteger(n.bitLength(), random);
+      if (BigInteger.ONE.compareTo(base) <= 0 && base.compareTo(n) < 0) {
+        return base;
+      }
+    }
   }
 }
