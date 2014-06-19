@@ -2,10 +2,10 @@
 package com.paycho.euler;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.inject.AbstractModule;
-import com.google.inject.Injector;
 import com.google.inject.multibindings.MapBinder;
+import com.paycho.euler.math.primes.Sieve;
+import com.paycho.euler.math.primes.SieveOfEratosthenes;
 import com.paycho.euler.problems.*;
 import com.sampullara.cli.Argument;
 import java.util.Map.Entry;
@@ -32,6 +32,7 @@ public class ProblemsModule extends AbstractModule {
           .put("3", Problem3.class)
           .put("4", Problem4.class)
           .put("5", Problem5.class)
+          .put("7", Problem7.class)
           .build();
   
   @Override
@@ -49,5 +50,7 @@ public class ProblemsModule extends AbstractModule {
         }
       }
     }
+    
+    bind(Sieve.class).to(SieveOfEratosthenes.class);
   }
 }
