@@ -11,31 +11,23 @@ import java.util.LinkedList;
  */
 public class LargestConsecutiveMultiple {
   
-  public Integer largestConsecutiveMultiple(String number) {
-    Integer runningTotal = 1;
-    Integer currentLargest = 0;
+  public Long largestConsecutiveMultiple(String number, Integer size) {
     Deque<Integer> currentSet = new LinkedList();
+    Long largest = 0L;
     for (Character character : number.toCharArray()) {
       Integer current = Integer.valueOf(character.toString());
-      runningTotal *= current;
-      if (runningTotal == 0) {
-        currentSet.clear();
-        runningTotal = 1;
-      } else {
-        
-        if (currentSet.size() == 5) {
-          runningTotal /= currentSet.pop();
+      currentSet.push(current);
+      if (currentSet.size() == size) {
+        Long total = 1L;
+        for (Integer entry : currentSet.toArray(new Integer[0])) {
+          total *= entry;
         }
-        // 9*9*9*9*9 is the biggest possible value
-        if (runningTotal > 59049) {
-          throw new RuntimeException("You done fucked up, son");
+        if (total > largest) {
+          largest = total;
         }
-        currentSet.push(current);
-        if (runningTotal > currentLargest) {
-          currentLargest = runningTotal;
-        }
+        currentSet.removeLast();
       }
     }
-    return currentLargest;
+    return largest;
   }
 }

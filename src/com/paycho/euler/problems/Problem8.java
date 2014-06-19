@@ -8,7 +8,7 @@ import com.paycho.euler.math.multiplication.LargestConsecutiveMultiple;
  *
  * @author Paycho <paycho@paycho.org>
  */
-public class Problem8 implements Problem<Integer> {
+public class Problem8 implements Problem<Long> {
   
   private static final String number ="73167176531330624919225119674426574742355349194934" +
                                       "96983520312774506326239578318016984801869478851843" +
@@ -39,7 +39,7 @@ public class Problem8 implements Problem<Integer> {
   }
   
   @Override
-  public Integer solve() {
-    return multipleFinder.largestConsecutiveMultiple(number);
+  public Long solve() {
+    return multipleFinder.largestConsecutiveMultiple(number, 13);
   }
 }
