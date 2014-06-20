@@ -5,7 +5,7 @@ import com.paycho.euler.utils.annotations.Nullable;
 import java.util.BitSet;
 
 /**
- * A quick and dirty implementation of a sieve of eratosthenes 
+ * A quick and dirty implementation of a sieve of Eratosthenes 
  * @author Paycho <paycho@paycho.org>
  */
 public class SieveOfEratosthenes implements Sieve {
