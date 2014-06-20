@@ -36,6 +36,7 @@ public class ProblemsModule extends AbstractModule {
           .put("7", Problem7.class)
           .put("8", Problem8.class)
           .put("9", Problem9.class)
+          .put("10", Problem10.class)
           .build();
   
   @Override
