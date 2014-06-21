@@ -43,3 +43,5 @@ Icon
 *nbproject
 *build
 /dist/
+*.idea
+*.iml

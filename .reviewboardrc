@@ -1,0 +1,3 @@
+REVIEWBOARD_URL = "http://reviewboard.giml.in"
+REPOSITORY = "Euler"
+BRANCH = "master"
