@@ -1,14 +1,15 @@
 
-package com.paycho.euler.problems;
+package com.paycho.euler.problems.onetotwenty;
 
 import com.google.inject.Inject;
 import com.paycho.euler.math.multiplication.LargestConsecutiveMultiple;
+import com.paycho.euler.problems.Problem;
 
 /**
  *
  * @author Paycho <paycho@paycho.org>
  */
-public class Problem8 implements Problem<Long> {
+public class Problem008 implements Problem<Long> {
   
   private static final String number ="73167176531330624919225119674426574742355349194934" +
                                       "96983520312774506326239578318016984801869478851843" +
@@ -34,7 +35,7 @@ public class Problem8 implements Problem<Long> {
   private final LargestConsecutiveMultiple multipleFinder;
   
   @Inject
-  public Problem8(LargestConsecutiveMultiple multipleFinder) {
+  public Problem008(LargestConsecutiveMultiple multipleFinder) {
     this.multipleFinder = multipleFinder;
   }
   

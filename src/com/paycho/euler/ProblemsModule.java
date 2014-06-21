@@ -7,6 +7,7 @@ import com.google.inject.multibindings.MapBinder;
 import com.paycho.euler.math.primes.Sieve;
 import com.paycho.euler.math.primes.SieveOfEratosthenes;
 import com.paycho.euler.problems.*;
+import com.paycho.euler.problems.onetotwenty.*;
 import com.sampullara.cli.Argument;
 import java.util.Map.Entry;
 
@@ -27,16 +28,17 @@ public class ProblemsModule extends AbstractModule {
   
   private static final ImmutableMap<String, Class<? extends Problem>> problems = 
       ImmutableMap.<String, Class<? extends Problem>>builder()
-          .put("1", Problem1.class)
-          .put("2", Problem2.class)
-          .put("3", Problem3.class)
-          .put("4", Problem4.class)
-          .put("5", Problem5.class)
-          .put("6", Problem6.class)
-          .put("7", Problem7.class)
-          .put("8", Problem8.class)
-          .put("9", Problem9.class)
-          .put("10", Problem10.class)
+          .put("1", Problem001.class)
+          .put("2", Problem002.class)
+          .put("3", Problem003.class)
+          .put("4", Problem004.class)
+          .put("5", Problem005.class)
+          .put("6", Problem006.class)
+          .put("7", Problem007.class)
+          .put("8", Problem008.class)
+          .put("9", Problem009.class)
+          .put("10", Problem010.class)
+          .put("11", Problem011.class)
           .build();
   
   @Override

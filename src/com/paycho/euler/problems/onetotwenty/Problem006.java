@@ -1,19 +1,20 @@
 
-package com.paycho.euler.problems;
+package com.paycho.euler.problems.onetotwenty;
 
 import com.google.inject.Inject;
 import com.paycho.euler.math.series.SumOfSquaresVsSquareOfSums;
+import com.paycho.euler.problems.Problem;
 
 /**
  *
  * @author Paycho <paycho@paycho.org>
  */
-public class Problem6 implements Problem<Integer> {
+public class Problem006 implements Problem<Integer> {
   
   private final SumOfSquaresVsSquareOfSums sumthingerDoober;
   
   @Inject
-  public Problem6(SumOfSquaresVsSquareOfSums sumthingerDoober) {
+  public Problem006(SumOfSquaresVsSquareOfSums sumthingerDoober) {
     this.sumthingerDoober = sumthingerDoober;
   }
   
