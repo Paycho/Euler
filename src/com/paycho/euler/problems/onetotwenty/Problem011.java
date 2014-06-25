@@ -20,7 +20,7 @@ public class Problem011 implements Problem<Long> {
   
   @Override
   public Long solve() {
-    return theGrid.findGreatestProduct(4);
+    return theGrid.findGreatestProduct(4L);
   }
   
 }

@@ -92,4 +92,8 @@ public class Vector implements Set<Coordinate> {
   public <T> T[] toArray(T[] a) {
     return vector.toArray(a);
   }
+
+  public boolean add(Integer x, Integer y) {
+    return add(new Coordinate(x, y));
+  }
 }
