@@ -12,7 +12,7 @@ import com.paycho.euler.math.primes.Factorizer;
  */
 public class DivisibleNumberFinder {
   
-  private final Multiset<Integer> factors = HashMultiset.create();
+  private final Multiset<Long> factors = HashMultiset.create();
   private final Factorizer factorizer;
   private Integer divisibleUpTo;
   
@@ -22,21 +22,24 @@ public class DivisibleNumberFinder {
   }
   
   public Integer findDivisibleNumber() {
-    for (int i = divisibleUpTo; i > 1; i--) {
-      Multiset<Integer> intermediateFactors = factorizer.factor(i);
-      for (Multiset.Entry<Integer> factor : intermediateFactors.entrySet()) {
+    for (long i = divisibleUpTo; i > 1; i--) {
+      Multiset<Long> intermediateFactors = factorizer.factor(i);
+      if(intermediateFactors.size() > 2) {
+        intermediateFactors.remove(i);
+      }
+      for (Multiset.Entry<Long> factor : intermediateFactors.entrySet()) {
         if (factor.getCount() > factors.count(factor.getElement())) {
           factors.setCount(factor.getElement(), factor.getCount());
         }
       }
     }
-    Integer multiple = 1;
-    for (Multiset.Entry<Integer> factor : factors.entrySet()) {
-      for (int i = 0; i < factor.getCount(); i++) {
+    Long multiple = 1L;
+    for (Multiset.Entry<Long> factor : factors.entrySet()) {
+      for (long i = 0; i < factor.getCount(); i++) {
         multiple *= factor.getElement();
       }
     }
-    return multiple;
+    return multiple.intValue();
   }
 
   public void setDivisibleNumber(int divisibleUpTo) {

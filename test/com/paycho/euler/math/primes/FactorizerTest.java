@@ -20,16 +20,16 @@ public class FactorizerTest {
   @Test
   public void testFactorizer() throws Exception {
     Factorizer factorizer = new Factorizer();
-    Multiset<Integer> expected = HashMultiset.create();
-    expected.add(2);
-    expected.add(2);
-    expected.add(5);
-    Multiset<Integer> factors = factorizer.factor(20);
+    Multiset<Long> expected = HashMultiset.create();
+    expected.add(2L);
+    expected.add(2L);
+    expected.add(5L);
+    Multiset<Long> factors = factorizer.factor(20L);
     assertEquals(expected, factors);
     
     expected = HashMultiset.create();
-    expected.add(7);
-    factors = factorizer.factor(7);
+    expected.add(7L);
+    factors = factorizer.factor(7L);
     assertEquals(expected, factors);
   }
 }
