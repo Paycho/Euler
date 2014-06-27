@@ -8,7 +8,7 @@ of ugly java-isms, and probably places where I'm doing dumb things.
 
 
 Installation
-=====
+====
 
 git clone https://github.com/Paycho/Euler.git
 
