@@ -7,7 +7,7 @@ import com.google.inject.multibindings.MapBinder;
 import com.paycho.euler.math.primes.Sieve;
 import com.paycho.euler.math.primes.SieveOfEratosthenes;
 import com.paycho.euler.problems.*;
-import com.paycho.euler.problems.onetotwenty.*;
+import com.paycho.euler.problems.solved.*;
 import com.sampullara.cli.Argument;
 import java.util.Map.Entry;
 
@@ -40,6 +40,7 @@ public class ProblemsModule extends AbstractModule {
           .put("10", Problem010.class)
           .put("11", Problem011.class)
           .put("12", Problem012.class)
+          .put("13", Problem013.class)
           .build();
   
   @Override
