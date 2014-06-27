@@ -19,6 +19,9 @@ when you're configuring your project.
 If you're UI-averse, a simple Makefile has been graciously provided by JoeDrago:
 
 git clone https://github.com/Paycho/Euler.git
+
 cd Euler
+
 make all
+
 make run
