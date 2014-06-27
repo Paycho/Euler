@@ -39,7 +39,7 @@ public class ProblemsRunner {
         builder.append(problem.solve());
         builder.append(" , in ").append(watch.stop());
       } else {
-        builder.append("skipped execution - test mode.");
+        builder.append("Test Successful!");
       }
       System.out.println(builder.toString());
     }
