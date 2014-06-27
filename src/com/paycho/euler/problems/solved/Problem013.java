@@ -1,9 +1,6 @@
 package com.paycho.euler.problems.solved;
 
-import com.paycho.euler.problems.Problem;
 import com.paycho.euler.problems.ProblemWithTest;
-
-import java.math.BigInteger;
 
 import static org.junit.Assert.assertTrue;
 

@@ -24,10 +24,14 @@ public class ProblemsModule extends AbstractModule {
         description = "which problem numbers to run, '" + ALL_PROBLEMS + "' for every problem", 
         delimiter = ",") 
     public static String[] problemNumbers = {ALL_PROBLEMS};
+
+    @Argument(value = "test",
+        description = "only run the tests for each problem")
+    public static Boolean runTests = false;
   }
   
-  private static final ImmutableMap<String, Class<? extends Problem>> problems = 
-      ImmutableMap.<String, Class<? extends Problem>>builder()
+  private static final ImmutableMap<String, Class<? extends ProblemWithTest>> problems =
+      ImmutableMap.<String, Class<? extends ProblemWithTest>>builder()
           .put("1", Problem001.class)
           .put("2", Problem002.class)
           .put("3", Problem003.class)
@@ -46,10 +50,10 @@ public class ProblemsModule extends AbstractModule {
   
   @Override
   public void configure() {
-    MapBinder<String, Problem> mapBinder = 
-        MapBinder.newMapBinder(binder(), String.class, Problem.class);
+    MapBinder<String, ProblemWithTest> mapBinder =
+        MapBinder.newMapBinder(binder(), String.class, ProblemWithTest.class);
     if (Arguments.problemNumbers[0].equals(ALL_PROBLEMS)) {
-      for (Entry<String, Class<? extends Problem>> entry : problems.entrySet()) {
+      for (Entry<String, Class<? extends ProblemWithTest>> entry : problems.entrySet()) {
         mapBinder.addBinding(entry.getKey()).to(entry.getValue());
       }
     } else {

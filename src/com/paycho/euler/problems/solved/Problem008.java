@@ -3,7 +3,6 @@ package com.paycho.euler.problems.solved;
 
 import com.google.inject.Inject;
 import com.paycho.euler.math.multiplication.LargestConsecutiveMultiple;
-import com.paycho.euler.problems.Problem;
 import com.paycho.euler.problems.ProblemWithTest;
 
 import static org.junit.Assert.assertEquals;

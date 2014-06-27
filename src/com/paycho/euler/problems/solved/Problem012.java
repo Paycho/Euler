@@ -4,10 +4,8 @@ import com.google.inject.Inject;
 import com.paycho.euler.math.division.Divisors;
 import com.paycho.euler.math.primes.Factorizer;
 import com.paycho.euler.math.series.TriangleSeries;
-import com.paycho.euler.problems.Problem;
 import com.paycho.euler.problems.ProblemWithTest;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**

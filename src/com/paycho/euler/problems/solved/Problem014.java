@@ -1,10 +1,7 @@
 package com.paycho.euler.problems.solved;
 
-import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.paycho.euler.problems.ProblemWithTest;
-
-import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 

@@ -3,7 +3,6 @@ package com.paycho.euler.problems.solved;
 
 import com.google.inject.Inject;
 import com.paycho.euler.math.primes.SieveOfEratosthenes;
-import com.paycho.euler.problems.Problem;
 import com.paycho.euler.problems.ProblemWithTest;
 import com.paycho.euler.utils.annotations.JoeDrago;
 
