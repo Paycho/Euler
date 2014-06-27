@@ -31,5 +31,10 @@ public class FactorizerTest {
     expected.add(7L);
     factors = factorizer.factor(7L);
     assertEquals(expected, factors);
+
+    expected = HashMultiset.create();
+    expected.add(2L, 3);
+    factors = factorizer.factor(8L);
+    assertEquals(expected, factors);
   }
 }

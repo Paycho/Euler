@@ -24,9 +24,6 @@ public class DivisibleNumberFinder {
   public Integer findDivisibleNumber() {
     for (long i = divisibleUpTo; i > 1; i--) {
       Multiset<Long> intermediateFactors = factorizer.factor(i);
-      if(intermediateFactors.size() > 2) {
-        intermediateFactors.remove(i);
-      }
       for (Multiset.Entry<Long> factor : intermediateFactors.entrySet()) {
         if (factor.getCount() > factors.count(factor.getElement())) {
           factors.setCount(factor.getElement(), factor.getCount());

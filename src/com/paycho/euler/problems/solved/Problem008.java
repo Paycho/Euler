@@ -4,12 +4,18 @@ package com.paycho.euler.problems.solved;
 import com.google.inject.Inject;
 import com.paycho.euler.math.multiplication.LargestConsecutiveMultiple;
 import com.paycho.euler.problems.Problem;
+import com.paycho.euler.problems.ProblemWithTest;
+
+import static org.junit.Assert.assertEquals;
 
 /**
+ * Project Euler - Problem 8
  *
- * @author Paycho <paycho@paycho.org>
+ * The four adjacent digits in the 1000-digit number {@code Problem008.number} that have the greatest product
+ * are 9 × 9 × 8 × 9 = 5832. Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+ * What is the value of this product?
  */
-public class Problem008 implements Problem<Long> {
+public class Problem008 implements ProblemWithTest<Long> {
   
   private static final String number ="73167176531330624919225119674426574742355349194934" +
                                       "96983520312774506326239578318016984801869478851843" +
@@ -37,6 +43,11 @@ public class Problem008 implements Problem<Long> {
   @Inject
   public Problem008(LargestConsecutiveMultiple multipleFinder) {
     this.multipleFinder = multipleFinder;
+  }
+
+  @Override
+  public void test() {
+    assertEquals((Long) 81L, multipleFinder.largestConsecutiveMultiple("9190023920290900201", 3));
   }
   
   @Override

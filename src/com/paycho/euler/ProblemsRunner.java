@@ -30,9 +30,9 @@ public class ProblemsRunner {
       builder.append(problem.getClass().getSimpleName()).append(" : ");
       if (problem instanceof ProblemWithTest) {
         try {
-          ((ProblemWithTest) problem).Test();
+          ((ProblemWithTest) problem).test();
         } catch (AssertionError e) {
-          builder.append("Failed its test, skipping...");
+          builder.append(String.format("Failed its test with error %s.", e.getMessage()));
           System.out.println(builder.toString());
           continue;
         }

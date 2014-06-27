@@ -1,7 +1,6 @@
 
 package com.paycho.euler.math.multiplication;
 
-import com.google.inject.Inject;
 import java.util.Deque;
 import java.util.LinkedList;
 

@@ -1,7 +1,6 @@
 package com.paycho.euler.math.series;
 
 import com.google.common.collect.Lists;
-import com.google.inject.Inject;
 
 import java.util.ArrayList;
 

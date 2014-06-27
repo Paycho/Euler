@@ -3,7 +3,6 @@ package com.paycho.euler.math.primes;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.*;
-import com.google.inject.Inject;
 import com.paycho.euler.utils.annotations.Nullable;
 
 import java.util.Map;
@@ -49,7 +48,7 @@ public class Factorizer {
       newFactors.add(unfactored);
       return newFactors;
     }
-    while (factor != unfactored && unfactored != 1) {
+    while (unfactored != 1) {
       factor = smallestFactor(unfactored);
       newFactors.add(factor);
       unfactored /= factor;

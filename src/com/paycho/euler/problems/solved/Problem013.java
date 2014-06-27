@@ -1,10 +1,16 @@
 package com.paycho.euler.problems.solved;
 
 import com.paycho.euler.problems.Problem;
+import com.paycho.euler.problems.ProblemWithTest;
 
 import java.math.BigInteger;
 
-public class Problem013 implements Problem<String> {
+import static org.junit.Assert.assertTrue;
+
+/**
+ * Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+ */
+public class Problem013 implements ProblemWithTest<String> {
 
   public static final double[] numbers = {37107287533902102798797998220837590246510135740250.0,
                                           46376937677490009712648124896970078050417018260538.0,
@@ -107,9 +113,13 @@ public class Problem013 implements Problem<String> {
                                           20849603980134001723930671666823555245252804609722.0,
                                           53503534226472524250874054075591789781264330331690.0};
 
-  /**
-   * Stupid as hell, convert to biginteger and then back to string. Durrr.
-   */
+  @Override
+  public void test() {
+    Double fart = 229188020587773197198394501808880724296.0;
+    assertTrue(fart.toString().replace(".","").substring(0,10).equals("2291880205"));
+  }
+
+  @Override
   public String solve() {
     double sum = 0;
     for (double number : numbers) {

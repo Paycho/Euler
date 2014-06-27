@@ -22,6 +22,7 @@ public class Problem014 implements ProblemWithTest<String> {
     lengths[2] = 2L;
   }
 
+  @Override
   public String solve() {
     for (long i = 3L; i < 1000000L; i++) {
       Long length = collatzMeBaby(i);
@@ -34,7 +35,8 @@ public class Problem014 implements ProblemWithTest<String> {
     return "Sequence starting at: " + startingNumber + " has length: " + longestSequence;
   }
 
-  public void Test() throws AssertionError {
+  @Override
+  public void test() throws AssertionError {
     assertEquals(10L, collatzMeBaby(13L));
   }
 
