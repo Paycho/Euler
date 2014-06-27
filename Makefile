@@ -1,6 +1,6 @@
 # Barebones, sloppy Makefile for people that are scared of UIs.
 
-JARS=../guava-17.0.jar:../guice-4.0-beta4-no_aop.jar:../mockito-all-1.9.5.jar:../cli-parser-1.0.jar:../com.springsource.javax.inject-1.0.0.jar:../guice-multibindings-4.0-beta4.jar
+JARS=../guava-17.0.jar:../guice-4.0-beta4-no_aop.jar:../mockito-all-1.9.5.jar:../cli-parser-1.0.jar:../com.springsource.javax.inject-1.0.0.jar:../guice-multibindings-4.0-beta4.jar:../junit-4.11.jar
 
 all: jar
 
