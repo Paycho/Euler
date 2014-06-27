@@ -1,7 +1,6 @@
 package com.paycho.euler.problems.solved;
 
 import com.paycho.euler.problems.Problem;
-import javafx.util.converter.BigIntegerStringConverter;
 
 import java.math.BigInteger;
 
