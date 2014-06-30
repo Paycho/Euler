@@ -45,3 +45,5 @@ Icon
 /dist/
 *.idea
 *.iml
+*_bak_*
+*_old_*
