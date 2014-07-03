@@ -1,5 +1,12 @@
 package com.paycho.euler.problems;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import com.paycho.euler.utils.MoreMath;
+
+import java.util.List;
+import java.util.Set;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -10,41 +17,41 @@ public class Problem015 implements ProblemWithTest<Long> {
 
   @Override
   public void test() {
-    generatePathsSlow(2, 0, 0);
-    assertEquals(6L, paths);
+    assertEquals(6L, generatePaths(2));
   }
 
   @Override
   public Long solve() {
-    generatePathsSlow(20, 0, 0);
-    return paths;
+    return generatePaths(20);
   }
-
-  private long paths = 0L;
 
   /**
    * This is probably a shit way to do this. I'm SURE I'm missing something obvious with combinatorics, but
    * I got tired of thinking about it.
-   *
-   * NO. I'm missing something obvious with 1s and 0s. New solution inc.
    */
-  public void generatePathsSlow(int size, int d, int r) {
+  public long generatePathsSlow(int size, int d, int r) {
     // Not thread safe, lel
-    if (d == 0 && r == 0) {
-      paths = 0L;
-    }
     if (d == size && r == size) {
-      ++paths;
-      return;
+      return 1L;
     } else if (d == size) {
-      generatePathsSlow(size, d, r + 1);
+      return generatePathsSlow(size, d, r + 1);
     } else if (r == size) {
-      generatePathsSlow(size, d + 1, r);
+      return generatePathsSlow(size, d + 1, r);
     } else {
-      generatePathsSlow(size, d + 1, r);
-      generatePathsSlow(size, d, r + 1);
+      return generatePathsSlow(size, d + 1, r) + generatePathsSlow(size, d, r + 1);
     }
   }
 
+  /**
+   * ... and the combinatorics way, which I totally had working until I mistyped something the first time I coded it,
+   * and then gave up and implemented the slow way. I'm retarded.
+   *
+   * I actually had a pretty clever solution representing the paths as binary numbers, where you had to have an equal
+   * number of 1s and 0s in it to be a valid path, but then I was like "wait, I'm pretty sure I'm retarded". Yep.
+   */
+  public long generatePaths(int size) {
+    return (MoreMath.factorial(2*size).divide((
+        MoreMath.factorial(size).multiply(MoreMath.factorial(2*size - size))))).longValue();
+  }
 
 }
