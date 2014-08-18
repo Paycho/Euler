@@ -22,16 +22,19 @@ public class PalindromeFinder {
   public Integer findBiggestPalindrome(Integer digits) {
     this.digits = digits;
     calculateBounds();
-    
+
+    int largest = 0;
     for (int i = maximum; i > minimum; i--) {
-      for (int j = maximum; j > minimum; j--) {
+      for (int j = maximum; j >= i; j--) {
         Integer possiblePalindrome = i*j;
-        if(check(possiblePalindrome.toString())) {
-          return possiblePalindrome;
+        if (check(possiblePalindrome.toString())) {
+          if (possiblePalindrome > largest) {
+            largest = possiblePalindrome;
+          }
         }
       }
     }
-    return -1;
+    return largest;
   }
   
   private boolean check(String possiblePalindrome) {
@@ -47,7 +50,7 @@ public class PalindromeFinder {
   private void calculateBounds() {
     maximum = 1;
     minimum = 1;
-    
+
     for (int i = 1; i < digits; i++) {
       maximum *= 10;
       minimum *= 10;
